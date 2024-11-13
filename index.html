@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Varisha</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url('https://wallpapercat.com/w/full/d/c/5/299823-3840x2160-desktop-4k-hello-kitty-background-photo.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .message {
+            position: absolute;
+            font-size: 30px; /* Font size */
+            font-weight: bold;
+            opacity: 0; /* Start with invisible text */
+            animation: appearAndDisappear 2s forwards;
+        }
+
+        .message-2 {
+            position: absolute;
+            font-size: 30px; /* Font size for the second message */
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Black text stroke effect */
+            opacity: 0;
+            animation: appearAndDisappear 2s forwards;
+        }
+
+        /* Keyframes for random positioning and fading */
+        @keyframes appearAndDisappear {
+            0% {
+                opacity: 0;
+            }
+            10% {
+                opacity: 1; /* Make it visible */
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0; /* Fade out */
+                transform: translateY(-50px); /* Slight upward movement as it fades */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        // Function to create a new "I love you varisha" bubble
+        function createBubble() {
+            const message = document.createElement('div');
+            message.classList.add('message');
+            message.textContent = 'I love you Varisha';
+
+            // Random position for the first message
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+
+            message.style.left = `${randomX}px`;
+            message.style.top = `${randomY}px`;
+
+            document.body.appendChild(message);
+
+            // Remove the message after 2 seconds
+            setTimeout(() => {
+                message.remove();
+            }, 2000);
+        }
+
+        // Function to create a new "and I love you more DUH" bubble with black text stroke
+        function createBubble2() {
+            const message = document.createElement('div');
+            message.classList.add('message-2');
+            message.textContent = 'and I love you more DUH';
+
+            // Random position for the second message
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+
+            message.style.left = `${randomX}px`;
+            message.style.top = `${randomY}px`;
+
+            document.body.appendChild(message);
+
+            // Remove the message after 2 seconds
+            setTimeout(() => {
+                message.remove();
+            }, 2000);
+        }
+
+        // Set an interval to create a new bubble for each message
+        setInterval(createBubble, 100); // First message ("I love you Varisha")
+        setInterval(createBubble2, 100); // Second message ("and I love you more DUH")
+    </script>
+</body>
+</html>
